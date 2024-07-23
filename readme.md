@@ -1,6 +1,6 @@
 # Thanks For Using Nasa Editor Library
-## Some developers want to develop their own code editor  so I built this library to make the work easy ! It `supports API 21 - API 34`.You can run your `Html`,`Css`&`JavaScript` code easily with this library and create your own code editor or use it in your project !
-## Follow the documentation below to know how to use the library
+### Some developers want to develop their own code editor  so I built this library to make the work easy ! It `supports API 21 - API 34`.You can run your `Html`,`Css`&`JavaScript` code easily with this library and create your own code editor or use it in your project !
+### Follow the documentation below to know how to use the library
 
 ### Step 0: Add this to your project gradle
 #### `settings.gradle`
