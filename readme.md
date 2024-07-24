@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 dependencies 
 {
   //dependency for Nasa Editor Library
- implementation 'com.github.CodeWithTamim:NasaEditor:1.0.1'
+ implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.1'
 }
 ```
 
