@@ -1,124 +1,153 @@
-# Thanks For Using Nasa Editor Library
-## Some developers want to develop their own code editor  so I built this library to make the work easy ! It `supports API 21 - API 34`.You can run your `Html`,`Css`&`JavaScript` code easily with this library and create your own code editor or use it in your project !
-## Follow the documentation below to know how to use the library
 
-### Step 0: Add this to your project gradle
-#### `settings.gradle`
+# Nasa Editor Library
+
+**Nasa Editor Library** is a lightweight library that allows developers to easily create their own code editor. This library supports running **HTML**, **CSS**, and **JavaScript** code and is compatible with API levels 21 - 34. Whether you're building a custom code editor or integrating code execution into an app, this library makes it simple.
+
+## 📚 Documentation
+
+Follow the steps below to integrate **Nasa Editor Library** into your Android project.
+
+---
+
+### Step 0: Add JitPack to Your Project's Gradle
+
+#### `settings.gradle` (Groovy)
 ```groovy
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        ...
-        ...
-        //add jikpack
-        maven { url 'https://jitpack.io' }
+        // other repositories
+        maven { url 'https://jitpack.io' }  // add JitPack repository
     }
 }
 ```
-#### `build.gradle` app level module
+
+---
+
+### Step 1: Add the Nasa Editor Library Dependency
+
+#### `build.gradle` (App-level) (Groovy)
 ```groovy
-dependencies 
-{
-  //dependency for Nasa Editor Library
- implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.1'
+dependencies {
+    // Dependency for Nasa Editor Library
+    implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.1'
 }
 ```
 
-### Step 1: Add a webview to your layout.
-#### Example : 
+---
+
+### Step 2: Add a WebView to Your Layout
+
+You will need a WebView component in your layout for the editor.
+
+#### XML Example:
 ```xml
 <WebView
-  android:id="@+id/webView"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@color/white"
-  android:scrollbars="none" />
+    android:id="@+id/webView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:scrollbars="none" />
 ```
 
-### Step 2: Initialize the NasaEditor in you activity or fragment.
-#### Example :
+---
 
-#### Java
+### Step 3: Initialize the NasaEditor in Your Activity or Fragment
+
+#### Java Example:
 ```java
-//with view binding
+// With view binding
 NasaEditor editor = new NasaEditor(binding.webView);
 ```
 ```java
-//with findViewById
+// With findViewById
 NasaEditor editor = new NasaEditor(findViewById(R.id.webView));
 ```
 
-#### Kotlin
+#### Kotlin Example:
 ```kotlin
-//with view binding
-val editor =  NasaEditor(binding.webView)
+// With view binding
+val editor = NasaEditor(binding.webView)
 ```
 ```kotlin
-//with findViewById
-val editor =  NasaEditor(findViewById(R.id.webView))
+// With findViewById
+val editor = NasaEditor(findViewById(R.id.webView))
 ```
 
-### Step 3: Set the `Html`,`Css` & `JavaScript` code to the editor.
+---
 
-#### Example :
-#### Java
+### Step 4: Set HTML, CSS, and JavaScript Code to the Editor
+
+#### Java Example:
 ```java
 editor.setHtmlCode("Your html code");
 editor.setCssCode("Your css code");
 editor.setJsCode("Your js code");
 ```
-#### Kotlin
+
+#### Kotlin Example:
 ```kotlin
 editor.htmlCode = "Your html code"
 editor.cssCode = "Your css code"
 editor.jsCode = "Your js code"
 ```
 
-### Step 4: Run the code
-#### Example : 
-#### Java
+---
+
+### Step 5: Run the Code
+
+#### Java Example:
 ```java
 editor.runCode(); 
 ```
 
-#### Kotlin
+#### Kotlin Example:
 ```kotlin
 editor.runCode()
 ```
 
-### Some Additional methods
-* Get Default Code For `Html`,`Css` & `JavaScript`
-#### Example : 
-#### Java
+---
+
+### Additional Methods
+
+You can also access some default code and the WebView itself using the methods below:
+
+#### Get Default HTML, CSS, and JavaScript Code:
+##### Java Example:
 ```java
-getDefaultHtmlCode();  //returns default html code as String
-getDefaultCssCode();  //returns default css code as String
-getDefaultJsCode();  //returns default js code as String
+getDefaultHtmlCode();  // Returns default HTML code as a String
+getDefaultCssCode();  // Returns default CSS code as a String
+getDefaultJsCode();  // Returns default JavaScript code as a String
 ```
 
-#### Kotlin
+##### Kotlin Example:
 ```kotlin
-getDefaultHtmlCode()  //returns default html code as String
-getDefaultCssCode()  //returns default css code as String
-getDefaultJsCode()  //returns default js code as String
+getDefaultHtmlCode()  // Returns default HTML code as a String
+getDefaultCssCode()  // Returns default CSS code as a String
+getDefaultJsCode()  // Returns default JavaScript code as a String
 ```
 
-* Get the WebView
-#### Example : 
-#### Java
+#### Get the WebView:
+##### Java Example:
 ```java
-getWebView();  //returns the webview
+getWebView();  // Returns the WebView
 ```
 
-#### Kotlin
+##### Kotlin Example:
 ```kotlin
-getWebView()  //returns the webview
-``` 
-  ### Thanks for reading the documentation, I'm `Tamim`, I made this library and I'm the one who was helping you throughout the documentation :)
-  ### If the library helped you out then please give it a start and share with your dev friends ! The project is open for contrubution so if you have any fixes or new feature enhancement then just fork it then make your changes create a new brach and then just hit a pull request.
+getWebView()  // Returns the WebView
+```
 
-  ## Thank you guys for your love and support
-  ## If you have any queries or need help then just open a issue or  <a href="mailto:tamimh.dev@gmail.com">mail me</a> 
+---
+
+## Contributions and Support
+
+If **Nasa Editor Library** helped you, consider giving it a ⭐️ and sharing it with fellow developers. Contributions are welcome! Feel free to fork the project, make your changes, and submit a pull request.
+
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+Thank you for using **Nasa Editor Library**! I’m **Tamim**, the creator of this library. If you have any questions or need further assistance, feel free to [open an issue](https://github.com/CodeWithTamim/Nasa-Editor-Library/issues) or [email me](mailto:tamimh.dev@gmail.com).
