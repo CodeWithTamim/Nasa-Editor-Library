@@ -1,46 +1,60 @@
 
-# Nasa Editor Library
+# 🚀 Nasa Editor Library
 
-**Nasa Editor Library** is a lightweight library that allows developers to easily create their own code editor. This library supports running **HTML**, **CSS**, and **JavaScript** code and is compatible with API levels 21 - 34. Whether you're building a custom code editor or integrating code execution into an app, this library makes it simple.
+**Nasa Editor Library** is a lightweight library that enables developers to effortlessly create custom code editors. The library supports execution of **HTML**, **CSS**, and **JavaScript** code and is compatible with API levels 21 - 34. Whether you're building a custom code editor or integrating code execution into an app, this library simplifies the process.
 
-## 📚 Documentation
+## 📖 Documentation
 
-Follow the steps below to integrate **Nasa Editor Library** into your Android project.
+### Step 0: Add JitPack Repository to Your Project
 
----
+In your `settings.gradle` file, ensure JitPack is included:
 
-### Step 0: Add JitPack to Your Project's Gradle
-
-#### `settings.gradle` (Groovy)
+#### Groovy:
 ```groovy
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         // other repositories
-        maven { url 'https://jitpack.io' }  // add JitPack repository
+        maven { url 'https://jitpack.io' }
     }
 }
 ```
 
----
+#### Gradle Kotlin DSL (`settings.gradle.kts`):
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // other repositories
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
 
-### Step 1: Add the Nasa Editor Library Dependency
+### Step 1: Add Nasa Editor Library Dependency
 
-#### `build.gradle` (App-level) (Groovy)
+In your app-level `build.gradle` file, add the dependency:
+
+#### Groovy:
 ```groovy
 dependencies {
-    // Dependency for Nasa Editor Library
+    // Nasa Editor Library
     implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.1'
 }
 ```
 
----
+#### Gradle Kotlin DSL (`build.gradle.kts`):
+```kotlin
+dependencies {
+    // Nasa Editor Library
+    implementation("com.github.CodeWithTamim:Nasa-Editor-Library:1.0.1")
+}
+```
 
-### Step 2: Add a WebView to Your Layout
+### Step 2: Add WebView to Your Layout
 
-You will need a WebView component in your layout for the editor.
+Define a `WebView` in your XML layout:
 
-#### XML Example:
 ```xml
 <WebView
     android:id="@+id/webView"
@@ -50,33 +64,35 @@ You will need a WebView component in your layout for the editor.
     android:scrollbars="none" />
 ```
 
----
+### Step 3: Initialize NasaEditor
 
-### Step 3: Initialize the NasaEditor in Your Activity or Fragment
+In your Activity or Fragment, initialize the editor:
 
 #### Java Example:
 ```java
-// With view binding
+// Using view binding
 NasaEditor editor = new NasaEditor(binding.webView);
 ```
+
 ```java
-// With findViewById
+// Using findViewById
 NasaEditor editor = new NasaEditor(findViewById(R.id.webView));
 ```
 
 #### Kotlin Example:
 ```kotlin
-// With view binding
+// Using view binding
 val editor = NasaEditor(binding.webView)
 ```
+
 ```kotlin
-// With findViewById
+// Using findViewById
 val editor = NasaEditor(findViewById(R.id.webView))
 ```
 
----
+### Step 4: Add HTML, CSS, and JavaScript Code
 
-### Step 4: Set HTML, CSS, and JavaScript Code to the Editor
+Inject HTML, CSS, and JavaScript code into the editor:
 
 #### Java Example:
 ```java
@@ -92,62 +108,60 @@ editor.cssCode = "Your css code"
 editor.jsCode = "Your js code"
 ```
 
----
+### Step 5: Execute the Code
 
-### Step 5: Run the Code
+Run the code in the editor:
 
 #### Java Example:
 ```java
-editor.runCode(); 
+editor.runCode();
 ```
 
 #### Kotlin Example:
 ```kotlin
-editor.runCode()
+editor.runCode();
 ```
 
----
+## 🎨 Additional Features
 
-### Additional Methods
+You can also retrieve default HTML, CSS, and JavaScript code or access the `WebView`:
 
-You can also access some default code and the WebView itself using the methods below:
-
-#### Get Default HTML, CSS, and JavaScript Code:
+#### Get Default Code:
 ##### Java Example:
 ```java
-getDefaultHtmlCode();  // Returns default HTML code as a String
-getDefaultCssCode();  // Returns default CSS code as a String
-getDefaultJsCode();  // Returns default JavaScript code as a String
+editor.getDefaultHtmlCode();
+editor.getDefaultCssCode();
+editor.getDefaultJsCode();
 ```
 
 ##### Kotlin Example:
 ```kotlin
-getDefaultHtmlCode()  // Returns default HTML code as a String
-getDefaultCssCode()  // Returns default CSS code as a String
-getDefaultJsCode()  // Returns default JavaScript code as a String
+editor.getDefaultHtmlCode();
+editor.getDefaultCssCode();
+editor.getDefaultJsCode();
 ```
 
-#### Get the WebView:
+#### Access the WebView:
 ##### Java Example:
 ```java
-getWebView();  // Returns the WebView
+editor.getWebView();
 ```
 
 ##### Kotlin Example:
 ```kotlin
-getWebView()  // Returns the WebView
+editor.getWebView();
 ```
 
+## 🤝 Contributions and Support
+
+If **Nasa Editor Library** helps you in your project, consider giving it a ⭐️ on GitHub. Contributions are encouraged! Fork the repository, make improvements, and submit a pull request.
+
+For any questions or issues, feel free to [open an issue](https://github.com/CodeWithTamim/Nasa-Editor-Library/issues) or [email me](mailto:tamimh.dev@gmail.com).
+
+## 📜 License
+
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
+
 ---
 
-## Contributions and Support
-
-If **Nasa Editor Library** helped you, consider giving it a ⭐️ and sharing it with fellow developers. Contributions are welcome! Feel free to fork the project, make your changes, and submit a pull request.
-
-## License
-
-This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
-
----
-
-Thank you for using **Nasa Editor Library**! I’m **Tamim**, the creator of this library. If you have any questions or need further assistance, feel free to [open an issue](https://github.com/CodeWithTamim/Nasa-Editor-Library/issues) or [email me](mailto:tamimh.dev@gmail.com).
+Thanks for using **Nasa Editor Library**!
