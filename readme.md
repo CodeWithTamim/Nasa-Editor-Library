@@ -1,5 +1,7 @@
 
 # 🚀 Nasa Editor Library
+[![](https://jitpack.io/v/CodeWithTamim/Nasa-Editor-Library.svg)](https://jitpack.io/#CodeWithTamim/Nasa-Editor-Library)
+
 
 **Nasa Editor Library** is a lightweight library that enables developers to effortlessly create custom code editors. The library supports execution of **HTML**, **CSS**, and **JavaScript** code and is compatible with API levels 21 - 34. Whether you're building a custom code editor or integrating code execution into an app, this library simplifies the process.
 
