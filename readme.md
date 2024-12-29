@@ -38,7 +38,7 @@ In your app-level `build.gradle` file, add the dependency:
 ```groovy
 dependencies {
     // Nasa Editor Library
-    implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.2'
+    implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.4'
 }
 ```
 
@@ -46,7 +46,7 @@ dependencies {
 ```kotlin
 dependencies {
     // Nasa Editor Library
-    implementation("com.github.CodeWithTamim:Nasa-Editor-Library:1.0.2")
+    implementation("com.github.CodeWithTamim:Nasa-Editor-Library:1.0.4")
 }
 ```
 
