@@ -1,17 +1,11 @@
-
-# 🚀 Nasa Editor Library
+# Nasa Editor Library
 [![](https://jitpack.io/v/CodeWithTamim/Nasa-Editor-Library.svg)](https://jitpack.io/#CodeWithTamim/Nasa-Editor-Library)
-![GitHub Stars](https://img.shields.io/github/stars/CodeWithTamim/Nasa-Editor-Library)
 ![License](https://img.shields.io/github/license/CodeWithTamim/Nasa-Editor-Library)
-![Android API](https://img.shields.io/badge/Android-API%2021--34-brightgreen)
-![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)
-![Platform](https://img.shields.io/badge/Platform-Android-blue)
 
-**Nasa Editor Library** is a lightweight library that enables developers to effortlessly create custom code editors. The library supports execution of **HTML**, **CSS**, and **JavaScript** code and is compatible with API levels 21 - 34. Whether you're building a custom code editor or integrating code execution into an app, this library simplifies the process.
 
-## 📖 Documentation
+Nasa Editor Library is a powerful library for running or previewing HTML, CSS, and JavaScript code on Android devices.
 
-### Step 0: Add JitPack Repository to Your Project
+## Installation
 
 In your `settings.gradle` file, ensure JitPack is included:
 
@@ -36,8 +30,7 @@ dependencyResolutionManagement {
     }
 }
 ```
-
-### Step 1: Add Nasa Editor Library Dependency
+Add Nasa Editor Library Dependency
 
 In your app-level `build.gradle` file, add the dependency:
 
@@ -45,7 +38,7 @@ In your app-level `build.gradle` file, add the dependency:
 ```groovy
 dependencies {
     // Nasa Editor Library
-    implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.1'
+    implementation 'com.github.CodeWithTamim:Nasa-Editor-Library:1.0.2'
 }
 ```
 
@@ -53,121 +46,96 @@ dependencies {
 ```kotlin
 dependencies {
     // Nasa Editor Library
-    implementation("com.github.CodeWithTamim:Nasa-Editor-Library:1.0.1")
+    implementation("com.github.CodeWithTamim:Nasa-Editor-Library:1.0.2")
 }
 ```
 
-### Step 2: Add WebView to Your Layout
 
-Define a `WebView` in your XML layout:
+## Permissions
+
+Make sure to add the following permission to your `AndroidManifest.xml`:
 
 ```xml
-<WebView
-    android:id="@+id/webView"
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+## Usage
+
+### XML Layout
+
+Add the `NasaEditorView` to your XML layout:
+
+```xml
+<com.nasahacker.editorlibrary.widget.NasaEditorView
+    android:id="@+id/editor_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:scrollbars="none" />
+/>
 ```
 
-### Step 3: Initialize NasaEditor
-
-In your Activity or Fragment, initialize the editor:
-
-#### Java Example:
-```java
-// Using view binding
-NasaEditor editor = new NasaEditor(binding.webView);
-```
+### Java Implementation
 
 ```java
-// Using findViewById
-NasaEditor editor = new NasaEditor(findViewById(R.id.webView));
+import com.nasahacker.editorlibrary.widget.NasaEditorView;
+
+public class MainActivity extends AppCompatActivity {
+    private NasaEditorView editorView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editorView = findViewById(R.id.editor_view);
+        editorView.setHtmlCode("<h1>Hello World</h1>");
+        editorView.setCssCode("h1 { color: red; }");
+        editorView.setJsCode("console.log('Hello World');");
+        editorView.runCode();
+    }
+}
 ```
 
-#### Kotlin Example:
+### Kotlin Implementation
+
 ```kotlin
-// Using view binding
-val editor = NasaEditor(binding.webView)
+import com.nasahacker.editorlibrary.widget.NasaEditorView
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var editorView: NasaEditorView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        editorView = findViewById(R.id.editor_view)
+        editorView.setHtmlCode("<h1>Hello World</h1>")
+        editorView.setCssCode("h1 { color: red; }")
+        editorView.setJsCode("console.log('Hello World');")
+        editorView.runCode()
+    }
+}
 ```
 
-```kotlin
-// Using findViewById
-val editor = NasaEditor(findViewById(R.id.webView))
-```
+## API
 
-### Step 4: Add HTML, CSS, and JavaScript Code
+### NasaEditorView
 
-Inject HTML, CSS, and JavaScript code into the editor:
+- `getDefaultHtml()`: Provides the default HTML template.
+- `getDefaultCss()`: Provides the default CSS template.
+- `getDefaultJs()`: Provides the default JavaScript template.
+- `getCssCode()`: Retrieves the current CSS code.
+- `getJsCode()`: Retrieves the current JavaScript code.
+- `getHtmlCode()`: Retrieves the current HTML code.
+- `runCode()`: Combines the HTML, CSS, and JavaScript code and previews it in the WebView.
+- `setHtmlCode(html: String)`: Updates the current HTML code.
+- `setCssCode(css: String)`: Updates the current CSS code.
+- `setJsCode(js: String)`: Updates the current JavaScript code.
+- `getInstance()`: Provides an instance of NasaEditorView.
 
-#### Java Example:
-```java
-editor.setHtmlCode("Your html code");
-editor.setCssCode("Your css code");
-editor.setJsCode("Your js code");
-```
+## License
 
-#### Kotlin Example:
-```kotlin
-editor.htmlCode = "Your html code"
-editor.cssCode = "Your css code"
-editor.jsCode = "Your js code"
-```
-
-### Step 5: Execute the Code
-
-Run the code in the editor:
-
-#### Java Example:
-```java
-editor.runCode();
-```
-
-#### Kotlin Example:
-```kotlin
-editor.runCode();
-```
-
-## 🎨 Additional Features
-
-You can also retrieve default HTML, CSS, and JavaScript code or access the `WebView`:
-
-#### Get Default Code:
-##### Java Example:
-```java
-editor.getDefaultHtmlCode();
-editor.getDefaultCssCode();
-editor.getDefaultJsCode();
-```
-
-##### Kotlin Example:
-```kotlin
-editor.getDefaultHtmlCode();
-editor.getDefaultCssCode();
-editor.getDefaultJsCode();
-```
-
-#### Access the WebView:
-##### Java Example:
-```java
-editor.getWebView();
-```
-
-##### Kotlin Example:
-```kotlin
-editor.getWebView();
-```
-
-## 🤝 Contributions and Support
-
-If **Nasa Editor Library** helps you in your project, consider giving it a ⭐️ on GitHub. Contributions are encouraged! Fork the repository, make improvements, and submit a pull request.
-
-For any questions or issues, feel free to [open an issue](https://github.com/CodeWithTamim/Nasa-Editor-Library/issues) or [email me](mailto:tamimh.dev@gmail.com).
-
-## 📜 License
-
-This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-Thanks for using **Nasa Editor Library**!
+Made with ❤️ by Tamim Hossain
