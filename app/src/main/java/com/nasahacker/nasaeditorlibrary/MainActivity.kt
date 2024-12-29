@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val editorView = findViewById<NasaEditorView>(R.id.editor_view)
+        /*val editorView = findViewById<NasaEditorView>(R.id.editor_view)
         editorView.setHtmlCode(editorView.getDefaultHtml())
         editorView.setCssCode(editorView.getDefaultCss())
         editorView.setJsCode(editorView.getDefaultJs())
-        editorView.runCode()
+        editorView.runCode()*/
 
 
     }

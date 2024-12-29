@@ -8,11 +8,11 @@
     tools:context=".MainActivity">
 
 
-    <com.nasahacker.editorlibrary.widget.NasaEditorView
+   <!-- <com.nasahacker.editorlibrary.widget.NasaEditorView
         android:id="@+id/editor_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        />-->
 
 
 
